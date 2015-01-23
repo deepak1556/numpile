@@ -910,9 +910,7 @@ module = lc.Module.new('numpile.module')
 engine = None
 function_cache = {}
 
-tm = le.TargetMachine.new(features='', cm=le.CM_JITDEFAULT)
-eb = le.EngineBuilder.new(module)
-engine = eb.create(tm)
+engine = le.ExecutionEngine.new(module)
 
 def autojit(fn):
     transformer = PythonVisitor()
